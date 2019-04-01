@@ -8,12 +8,18 @@ public class Main {
 //        String kutasUP = kutas.toUpperCase();
 //        System.out.println(kutasUP);
 
-        Scanner chuj = new Scanner(System.in);  // Reading from System.in
-        System.out.println("Enter a number: ");
-        int n = chuj.nextInt(); // Scans the next token of the input as an int.
+        Scanner scanner = new Scanner(System.in);  // Reading from System.in
+        while (true) {
+            System.out.println("Enter a number: ");
+            int n = scanner.nextInt(); // Scans the next token of the input as an int.
 //once finished
-        chuj.close();
-        System.out.println("You entered " + n + " you shithead, to poęga");
-        System.out.println("A ta liczba do potęgi drugiej to " + Calkulejtor.calculatePower(n) + " ty cioto");
+
+            Calculator calculator = new Calculator();
+            System.out.println("You entered " + n + ", this is your lucky number");
+            System.out.println("Your number to the power of 2 equals " + calculator.calculatePower(n));
+            System.out.println("Your number accumulated with itself equals " + calculator.calculateSum(n));
+            System.out.println("Your number substracted with 1 equals " + calculator.calculateSubstract(n));
+            System.out.println("Your number divided by itself lowered by 1 equals " + calculator.calculateDivision(n));
+        }
     }
 }
